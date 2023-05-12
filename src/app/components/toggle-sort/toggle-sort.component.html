@@ -1,0 +1,18 @@
+<div class="row">
+    <p>Sort By:  
+        <mat-button-toggle-group name="sort" (change)="sortToggleEventHandler($event)">
+            <mat-button-toggle value="upload"> 
+                <i class="fa fa-upload" aria-hidden="true"></i>
+                Upload Speed
+            </mat-button-toggle>
+            <mat-button-toggle value="download">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Download Speed
+            </mat-button-toggle>
+            <mat-button-toggle value="price"> 
+                <i class="fa fa-money" aria-hidden="true"></i>
+                Price
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </p> 
+</div>

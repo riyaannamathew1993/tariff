@@ -1,0 +1,38 @@
+<app-toggle-sort
+  class="col align-self-center"
+  (valueChange)="sortToggleEventHandler($event)"
+></app-toggle-sort>
+
+<div class="row">
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Upload Speed</th>
+        <th>Download Speed</th>
+        <th>Benefits</th>
+        <th>Price <i class="fa fa-eur" aria-hidden="true"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tariff of filteredTariffs">
+        <td>{{ tariff.name }}</td>
+        <td>{{ tariff.uploadSpeed }} Mbps</td>
+        <td>{{ tariff.downloadSpeed }} Mbps</td>
+        <td>
+          <ul>
+            <li *ngFor="let benefit of tariff.benefits">{{ benefit }}</li>
+          </ul>
+        </td>
+        <td>
+          {{ tariff.price | number }}
+          <div>
+            <button>
+              To Tariff <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

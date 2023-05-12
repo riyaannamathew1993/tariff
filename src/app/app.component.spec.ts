@@ -1,15 +1,28 @@
 import { TestBed } from '@angular/core/testing';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TariffResultComponent } from './components/tariff-result/tariff-result.component';
+import { ToggleSortComponent } from './components/toggle-sort/toggle-sort.component';
+import { MaterialModule } from './modules/material.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonToggleModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent,
+        TariffResultComponent,
+        ToggleSortComponent,
       ],
     }).compileComponents();
   });
@@ -24,12 +37,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('tariff');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tariff app is running!');
   });
 });
